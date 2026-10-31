@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Sunday Edit : blog lifestyle, mode, beauté, voyage et inspiration quotidienne.">
+<title>The Sunday Edit | Blog & Lifestyle</title>
+
+<style>
+:root {
+  --cream: #faf7f2;
+  --white: #fffdf9;
+  --pink: #ead2cf;
+  --rose: #b77c78;
+  --brown: #302b29;
+  --grey: #817873;
+  --line: #e8e0d8;
+  --serif: Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+
+.topbar {
+  background: var(--brown);
+  color: white;
+  text-align: center;
+  padding: 9px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px 15px;
+}
+
+.logo {
+  font: 48px var(--serif);
+  letter-spacing: 4px;
+}
+
+.tagline {
+  font: italic 14px var(--serif);
+  color: var(--grey);
+  margin: 5px 0 25px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 15px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+nav a {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: var(--rose);
+}
+
+/* HERO */
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 0 25px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #eee4dc;
+  margin: 35px 0 75px;
+  min-height: 480px;
+}
+
+.hero-content {
+  padding: 65px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  color: var(--rose);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font: 65px/1.05 var(--serif);
+  margin: 20px 0;
+}
+
+.hero p {
+  font: 17px/1.8 var(--serif);
+  color: #6e625c;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  background: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85") center/cover;
+  min-height: 400px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--brown);
+  color: white;
+  padding: 14px 25px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: var(--rose);
+}
+
+/* ARTICLES */
+
+.section-title {
+  font: 40px var(--serif);
+  font-weight: normal;
+  margin: 12px 0 25px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filter {
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 9px 17px;
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--brown);
+  color: white;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px 25px;
+  margin-bottom: 85px;
+}
+
+.article[hidden] {
+  display: none;
+}
+
+.article img {
+  width: 100%;
+  aspect-ratio: 4/4.5;
+  object-fit: cover;
+}
+
+.category {
+  display: block;
+  color: var(--rose);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin: 15px 0 8px;
+  text-transform: uppercase;
+}
+
+.article h3 {
+  font: 26px/1.2 var(--serif);
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.article p {
+  font: 14px/1.8 var(--serif);
+  color: var(--grey);
+  margin-bottom: 15px;
+}
+
+.read-more {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--rose);
+  padding-bottom: 4px;
+}
+
+/* ABOUT */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #efe5df;
+  margin-bottom: 80px;
+}
+
+.about img {
+  width: 100%;
+  height: 100%;
+  min-height: 370px;
+  object-fit: cover;
+}
+
+.about-content {
+  padding: 60px 45px;
+  align-self: center;
+}
+
+.about h2 {
+  font: 45px var(--serif);
+  margin: 15px 0;
+  font-weight: normal;
+}
+
+.about p {
+  font: 16px/1.9 var(--serif);
+  color: #6e625c;
+  margin-bottom: 15px;
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+  text-align: center;
+  background: #f0e5e0;
+  padding: 55px 20px;
+  margin-bottom: 80px;
+}
+
+.newsletter h2 {
+  font: 40px var(--serif);
+  margin: 12px 0;
+}
+
+.newsletter p {
+  font: 15px var(--serif);
+  color: var(--grey);
+}
+
+.newsletter form {
+  display: flex;
+  max-width: 450px;
+  margin: 25px auto 0;
+}
+
+.newsletter input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.newsletter button {
+  background: var(--brown);
+  color: white;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--brown);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer .logo {
+  font-size: 32px;
+}
+
+footer p {
+  font: italic 14px var(--serif);
+  color: #c8bbb2;
+  margin: 10px;
+}
+
+/* ARTICLE MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0009;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  background: var(--white);
+  padding: 40px;
+  max-width: 650px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  font: 35px var(--serif);
+  margin: 15px 0;
+}
+
+.modal-content p {
+  font: 16px/1.9 var(--serif);
+  color: var(--grey);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 750px) {
+  .hero,
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    order: -1;
+    min-height: 300px;
+  }
+
+  .hero-content,
+  .about-content {
+    padding: 35px 25px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .articles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 15px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+}
+
+@media(max-width: 450px) {
+  .articles {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter button {
+    padding: 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  A LITTLE INSPIRATION FOR YOUR EVERYDAY ✦
+</div>
+
+<header>
+  <div class="logo">THE SUNDAY EDIT</div>
+  <div class="tagline">Style, beauty & little moments</div>
+
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#articles">Journal</a>
+    <a href="#articles" data-nav="Mode">Mode</a>
+    <a href="#articles" data-nav="Beauté">Beauté</a>
+    <a href="#articles" data-nav="Voyage">Voyage</a>
+    <a href="#about">À propos</a>
+  </nav>
+</header>
+
+<main class="container" id="home">
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+    <span class="eyebrow">Le plaisir des choses simples</span>
+
+    <h1>Make room for<br><i>beautiful</i> things.</h1>
+
+    <p>
+      Un carnet d'inspiration pour cultiver son style,
+      découvrir de nouveaux horizons et savourer
+      les petits instants du quotidien.
+    </p>
+
+    <a href="#articles" class="btn">Explorer le journal</a>
+  </div>
+
+  <div class="hero-image"></div>
+
+</section>
+
+<!-- ARTICLES -->
+
+<section id="articles">
+
+  <span class="eyebrow">À lire en ce moment</span>
+  <h2 class="section-title">Latest Stories</h2>
+
+  <div class="filters">
+    <button class="filter active" data-filter="Tout">Tout voir</button>
+    <button class="filter" data-filter="Mode">Mode</button>
+    <button class="filter" data-filter="Beauté">Beauté</button>
+    <button class="filter" data-filter="Voyage">Voyage</button>
+    <button class="filter" data-filter="Lifestyle">Lifestyle</button>
+  </div>
+
+  <div class="articles">
+
+    <article class="article" data-category="Mode">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=850&q=85" alt="Inspiration mode">
+      <span class="category">Mode · 5 min</span>
+      <h3>Les essentiels d'une garde-robe intemporelle</h3>
+      <p>Quelques pièces bien choisies pour composer des looks élégants et personnels.</p>
+      <a href="#" class="read-more"
+      data-title="Les essentiels d'une garde-robe intemporelle"
+      data-body="Construire une garde-robe qui nous ressemble commence par des pièces faciles à associer : une chemise blanche, un jean bien coupé, un blazer et des accessoires. L'idée n'est pas de suivre toutes les tendances, mais de choisir des vêtements dans lesquels on se sent bien.">Lire l'article</a>
+    </article>
+
+    <article class="article" data-category="Beauté">
+      <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=850&q=85" alt="Produits beauté">
+      <span class="category">Beauté · 4 min</span>
+      <h3>Une routine beauté simple, sans pression</h3>
+      <p>Revenir à l'essentiel : prendre soin de soi avec douceur et régularité.</p>
+      <a href="#" class="read-more"
+      data-title="Une routine beauté simple"
+      data-body="Une routine agréable n'a pas besoin d'être compliquée. Le matin, nettoie doucement ta peau, hydrate-la et applique une protection solaire. Le soir, retire le maquillage, nettoie et hydrate. La régularité compte davantage qu'une étagère remplie de produits.">Lire l'article</a>
+    </article>
+
+    <article class="article" data-category="Voyage">
+      <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=850&q=85" alt="Voyage à Paris">
+      <span class="category">Voyage · 6 min</span>
+      <h3>Partir le temps d'un week-end</h3>
+      <p>Changer d'air, marcher sans programme et collectionner de nouveaux souvenirs.</p>
+      <a href="#" class="read-more"
+      data-title="Partir le temps d'un week-end"
+      data-body="Pour un week-end réussi, choisis un quartier agréable, repère quelques adresses et garde du temps pour te promener. Prépare une petite valise avec des vêtements faciles à combiner et des chaussures confortables.">Lire l'article</a>
+    </article>
+
+    <article class="article" data-category="Lifestyle">
+      <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=850&q=85" alt="Coin lecture">
+      <span class="category">Lifestyle · 3 min</span>
+      <h3>Créer son petit rituel du dimanche</h3>
+      <p>Un café, quelques pages, une playlist et un moment rien qu'à soi.</p>
+      <a href="#" class="read-more"
+      data-title="Créer son petit rituel du dimanche"
+      data-body="Prépare ta boisson préférée, mets une playlist qui te fait du bien et prends quelques minutes pour noter tes envies de la semaine. Pas besoin d'une routine parfaite : choisis simplement un geste qui te fait plaisir.">Lire l'article</a>
+    </article>
+
+    <article class="article" data-category="Mode">
+      <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=850&q=85" alt="Look urbain">
+      <span class="category">Mode · 4 min</span>
+      <h3>Le secret d'un look qui nous ressemble</h3>
+      <p>Associer basiques, textures et détails pour exprimer sa personnalité.</p>
+      <a href="#" class="read-more"
+      data-title="Le secret d'un look qui nous ressemble"
+      data-body="Un look personnel se construit avec des détails : une couleur que tu aimes, un bijou que tu portes souvent, une belle matière ou une silhouette dans laquelle tu te sens toi-même. Le style est une façon de raconter quelque chose sur soi.">Lire l'article</a>
+    </article>
+
+    <article class="article" data-category="Lifestyle">
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=850&q=85" alt="Shopping">
+      <span class="category">Lifestyle · 5 min</span>
+      <h3>Consommer moins, choisir mieux</h3>
+      <p>Faire des achats plus réfléchis et redonner de la valeur aux objets du quotidien.</p>
+      <a href="#" class="read-more"
+      data-title="Consommer moins, choisir mieux"
+      data-body="Avant un achat, demande-toi si tu en as réellement besoin et si tu l'utiliseras souvent. Acheter moins mais choisir des objets utiles, durables et qui nous plaisent vraiment peut rendre le quotidien plus simple.">Lire l'article</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Univers lifestyle">
+
+  <div class="about-content">
+    <span class="eyebrow">Derrière le journal</span>
+    <h2>Hello, lovely!</h2>
+
+    <p>
+      Bienvenue dans mon petit univers.
+      The Sunday Edit est un espace où je partage
+      mes inspirations mode, mes découvertes beauté,
+      mes escapades et toutes ces petites choses
+      qui rendent le quotidien plus joli.
+    </p>
+
+    <p>
+      Installe-toi confortablement, prends ton café
+      et faisons le plein d'inspiration.
+    </p>
+  </div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter" id="newsletter">
+
+  <span class="eyebrow">La petite lettre du dimanche</span>
+
+  <h2>A note just for you.</h2>
+
+  <p>
+    Des inspirations, des favoris et de nouvelles histoires
+    directement dans ta boîte mail.
+  </p>
+
+  <form id="newsletterForm">
+    <input type="email" placeholder="Ton adresse e-mail" required>
+    <button type="submit">S'inscrire</button>
+  </form>
+
+  <p id="message"></p>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="logo">THE SUNDAY EDIT</div>
+  <p>Style, beauty & little moments.</p>
+  <p>Instagram · Pinterest · Contact</p>
+  <small>© 2026 The Sunday Edit — Blog Lifestyle</small>
+</footer>
+
+<!-- ARTICLE POPUP -->
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="close" aria-label="Fermer">&times;</button>
+    <span class="eyebrow">The Sunday Edit · Journal</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalBody"></p>
+  </div>
+</div>
+
+<script>
+
+// FILTRAGE DES ARTICLES
+
+const filters = document.querySelectorAll(".filter");
+const articles = document.querySelectorAll(".article");
+
+filters.forEach(button => {
+  button.addEventListener("click", () => {
+
+    filters.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+
+    const category = button.dataset.filter;
+
+    articles.forEach(article => {
+      article.hidden =
+        category !== "Tout" &&
+        article.dataset.category !== category;
+    });
+
+  });
+});
+
+// NAVIGATION PAR CATEGORIE
+
+document.querySelectorAll("[data-nav]").forEach(link => {
+  link.addEventListener("click", () => {
+    const category = link.dataset.nav;
+
+    filters.forEach(button => {
+      button.classList.toggle(
+        "active",
+        button.dataset.filter === category
+      );
+    });
+
+    articles.forEach(article => {
+      article.hidden = article.dataset.category !== category;
+    });
+  });
+});
+
+// OUVERTURE DES ARTICLES
+
+const modal = document.getElementById("modal");
+
+document.querySelectorAll(".read-more").forEach(link => {
+
+  link.addEventListener("click", event => {
+    event.preventDefault();
+
+    document.getElementById("modalTitle").textContent =
+      link.dataset.title;
+
+    document.getElementById("modalBody").textContent =
+      link.dataset.body;
+
+    modal.classList.add("open");
+  });
+
+});
+
+// FERMETURE DU POPUP
+
+document.querySelector(".close").addEventListener("click", () => {
+  modal.classList.remove("open");
+});
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) {
+    modal.classList.remove("open");
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    modal.classList.remove("open");
+  }
+});
+
+// NEWSLETTER DEMO
+
+document.getElementById("newsletterForm")
+.addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  document.getElementById("message").textContent =
+    "Merci pour ton inscription ! 💗 (Démonstration uniquement)";
+
+  event.target.reset();
+
+});
+
+</script>
+
+</body>
+</html>
